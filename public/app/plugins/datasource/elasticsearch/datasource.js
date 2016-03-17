@@ -244,9 +244,17 @@ function (angular, _, moment, kbn, ElasticQueryBuilder, IndexPattern, ElasticRes
     this.getTerms = function(queryDef) {
       var range = timeSrv.timeRange();
       var header = this.getQueryHeader('count', range.from, range.to);
-      var esQuery = angular.toJson(this.queryBuilder.getTermsQuery(queryDef));
+      var query = this.queryBuilder.getTermsQuery(queryDef);
 
-      esQuery = esQuery.replace("$lucene_query", queryDef.query || '*');
+      if (queryDef.query) {
+        query.query.filtered.query.query_string.query = queryDef.query;
+      }
+      if (queryDef.filter) {
+        query.query.filtered.filter = queryDef.filter;
+      }
+
+      var esQuery = angular.toJson(query);
+
       esQuery = esQuery.replace(/\$timeFrom/g, range.from.valueOf());
       esQuery = esQuery.replace(/\$timeTo/g, range.to.valueOf());
       esQuery = header + '\n' + esQuery + '\n';
