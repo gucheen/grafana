@@ -16,11 +16,12 @@ function (angular, _) {
       "query": '',
       "textField": "desc",
       "titleField": "title",
-      "deployTag": true
+      "deployTag": true // deployTag 用来标记着是一个发布专用的 annotation
     };
 
     $scope.init = function() {
       $scope.appId = '';
+      // 检查当前 annotations 中是否有发布专用的 annotation
       if (_.isArray($scope.dashboard.annotations.list)) {
         const deployAnnotation = _.find($scope.dashboard.annotations.list, 'deployTag');
         $scope.deployAnnotation = deployAnnotation || annotationDefaults;
