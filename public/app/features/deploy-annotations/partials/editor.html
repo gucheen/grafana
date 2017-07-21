@@ -1,0 +1,41 @@
+<div ng-controller="DeployAnnotationsEditorCtrl" ng-init="init()">
+	<div class="tabbed-view-header">
+		<h2 class="tabbed-view-title">
+			Deploy Annotations
+		</h2>
+
+		<ul class="gf-tabs">
+			<li class="gf-tabs-item">
+				<a class="gf-tabs-link active">
+					settings
+				</a>
+			</li>
+		</ul>
+
+		<button class="tabbed-view-close-btn" ng-click="dismiss();">
+			<i class="fa fa-remove"></i>
+		</button>
+	</div>
+
+	<div class="tabbed-view-body">
+		<div class="annotations-basic-settings">
+      <div class="gf-form-group">
+        <div class="gf-form-inline">
+          <div class="gf-form gf-size-max-xxl">
+            <span class="gf-form-label">App ID</span>
+            <input type="text" class="gf-form-input" ng-model="appId" placeholder="App ID" />
+          </div>
+        </div>
+      </div>
+
+			<div class="gf-form">
+				<div class="gf-form-button-row p-y-0">
+					<button ng-if="deployAnnotation.query" type="button" class="btn btn-success pull-left" ng-click="update()">Update</button>
+					<button ng-if="!deployAnnotation.query" type="button" class="btn btn-success pull-left" ng-click="add()">Save</button>
+          <button ng-if="deployAnnotation.query" type="button" class="btn btn-danger pull-left" ng-click="removeAnnotation()">Remove</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

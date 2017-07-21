@@ -8,4 +8,5 @@ define([
   './snapshot/all',
   './panel/all',
   './styleguide/styleguide',
+  './deploy-annotations/annotations_srv',
 ], function () {});

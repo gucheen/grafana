@@ -9,7 +9,8 @@ function ($, coreModule) {
     'settings':    { src: 'public/app/features/dashboard/partials/settings.html'},
     'annotations': { src: 'public/app/features/annotations/partials/editor.html'},
     'templating':  { src: 'public/app/features/templating/partials/editor.html'},
-    'import':      { src: '<dash-import></dash-import>' }
+    'import':      { src: '<dash-import></dash-import>' },
+    'deploy':  { src: 'public/app/features/deploy-annotations/partials/editor.html' },
   };
 
   coreModule.default.directive('dashEditorView', function($compile, $location, $rootScope) {
