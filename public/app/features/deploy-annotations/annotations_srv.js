@@ -106,9 +106,9 @@ define([
         "query": "appId: zeus.eos",
         "textField": "desc",
         "titleField": "title",
-        "deployTag": true,
+        "deployTag": true
       });
-    }
+    };
 
     // Now init
     // this.init();
