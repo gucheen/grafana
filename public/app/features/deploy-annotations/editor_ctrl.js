@@ -10,7 +10,7 @@ function (angular, _) {
   module.controller('DeployAnnotationsEditorCtrl', function($scope) {
     var COLOR_MAP = {
       rollout: 'rgba(255, 96, 96, 1)',
-      rollback: 'rgba(255, 96, 96, 1)'
+      rollback: 'F6C90E'
     };
 
     var DEPLOY_TYPES = ['rollout', 'rollback'];
